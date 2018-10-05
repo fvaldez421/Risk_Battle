@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" type="text/css"></link>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+        crossorigin="anonymous"></script>
+
+    <title>Risk Battle</title>
+</head>
+
+<body>
+    <div id="main">
+        <div class="jumbotron">
+            <div class="row">
+                <div class="col-md-8 mr-auto ml-auto">
+                    <h1>
+                        This is Risk Battle
+                    </h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-8 mr-auto ml-auto">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <form class="form">
+                                <div class="form-group">
+                                    <label for="attackInput">Attackers</label>
+                                    <input type="number" class="form-control" id="attackInput" placeholder="Enter number of attackers">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-6">
+                            <form class="form">
+                                <div class="form-group">
+                                    <label for="defenceInput">Defenders</label>
+                                    <input type="number" class="form-control" id="defenceInput" placeholder="Enter number of defenders">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-12">
+                            <button class="btn btn-success mr-2" id="fightAll">Fight to the death!</button>
+                            <button class="btn btn-warning" id="fightOnce">Fight one round!</button>
+                            <button class="btn btn-danger float-right" id="clearFields">Clear</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 mt-4">
+                            <h3>
+                                Results:
+                            </h3>
+                            <h5>Remaining:</h5>
+                            <div class="row">
+                                <div id="attResult" class="col-md-6">
+                                    <h6>Attackers:
+                                        <div id="remAtt" class="dice red float-right"></div>
+                                    </h6>
+                                    <div id="rolls"></div>
+                                </div>
+                                <div id="defResult" class="col-md-6">
+                                    <h6>Defenders:
+                                        <div id="remDef" class="dice white float-right"></div>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+<script src="./fight.js"></script>
+
+</html>
