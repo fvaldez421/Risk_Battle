@@ -61,8 +61,8 @@ $(window).on('load', function () {
     }
 
     function updateScore(att, def) {
-        $('#remAtt').html(attackers);
-        $('#remDef').html(defenders);
+        $('#remAtt').text(attackers);
+        $('#remDef').text(defenders);
         const cont = `<div id="round_${round}" class="row mb-4"></div>`;
         $('#rolls').append(cont);
         const attRow = `<div id="att_${round}" class="clear ml-3 mb-2"></div>`
