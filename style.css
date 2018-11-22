@@ -1,6 +1,17 @@
 body {
     background-color: lightgrey;
 }
+.progressBar {
+    border-radius: 3px;
+    padding: 0 4px 2px 4px;
+}
+.green {
+    background-color: #28a745;
+}
+#progress {
+    color: white;
+    float: right;
+}
 .red {
     background-color: darkred; 
     color: white;

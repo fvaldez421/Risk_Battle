@@ -17,7 +17,7 @@ $(window).on('load', function () {
             defenders = parseInt(defenceInput.val());
         }
         fight(attackers, defenders);
-    })
+    });
 
     fightAllBtn.on('click', function () {
         console.log('fight-all');
@@ -63,10 +63,13 @@ $(window).on('load', function () {
     function updateScore(att, def) {
         $('#remAtt').text(attackers);
         $('#remDef').text(defenders);
-        const cont = `<div id="round_${round}" class="row mb-4"></div>`;
-        $('#rolls').append(cont);
-        const attRow = `<div id="att_${round}" class="clear ml-3 mb-2"></div>`
-        const defRow = `<div id="def_${round}" class="clear ml-3"></div>`
+
+        const roundRow = `<div id="round_${round}" class="row mb-4"></div>`;
+        $('#rolls').append(roundRow);
+
+        const attRow = `<div id="att_${round}" class="clear ml-3 mb-2"></div>`;
+        const defRow = `<div id="def_${round}" class="clear ml-3"></div>`;
+
         $(`#round_${round}`).append(attRow).append(defRow);
 
         for (let i = att.length - 1; i >= 0; i--) {
@@ -83,9 +86,14 @@ $(window).on('load', function () {
                 .text(def[i]);
             $(`#def_${round}`).prepend(dice);
         }
+
+        if (attackers === 0 || defenders === 0) {
+            const progressBar = $('#progressBar');
+            progressBar.attr('class', 'progressBar green')
+            $('#progress').text('Done!');
+        }
         attackInput.val(attackers);
         defenceInput.val(defenders);
-
     }
 
     function getRand() {
@@ -115,7 +123,7 @@ $(window).on('load', function () {
         console.log(att);
         console.log(def);
         console.log(attackers, defenders);
-    }
+    };
 
     function fight(att, def, recurs = false) {
         round++;
