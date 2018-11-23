@@ -44,6 +44,9 @@ $(window).on('load', function () {
     clearRes.on('click', function () {
         clearFields();
         clearRound();
+        const progressBar = $('#progressBar');
+        progressBar.attr('class', 'progressBar')
+        $('#progress').text('');
     });
 
     function clearFields() {
