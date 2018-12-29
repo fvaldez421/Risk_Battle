@@ -1,11 +1,9 @@
 $(window).on('load', function () {
+    const clearRes = $('#clearFields');
     const fightAllBtn = $('#fightAll');
     const fightSingle = $('#fightOnce');
-    const clearRes = $('#clearFields');
-
     const attackInput = $('#attackInput');
     const defenceInput = $('#defenceInput');
-
     let attackers = -1;
     let defenders = 0;
     let round = 0;
@@ -171,7 +169,4 @@ $(window).on('load', function () {
             console.log('done');
         }
     };
-
-
-
 });
